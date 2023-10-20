@@ -8,140 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-<!-- <p id="pEl"></p>
-<input id="inputEl"></input>
-<button id="buttonEl">go</button>
-<p id="pEl2"></p>
-<input id="inputDvalue"></input>
 
-<input id="sliderEl" type="color"><br> -->
 
 <label for="pogodaInput">wyszukaj</label>
 <input name="pogodaInput" value="Zambrow" id="inputWheater"></input>
 <button id="pogodaBTN">wyszukaj</button>
-
 <pre id="data"></pre>
 
 </body>
 
     <script type="text/javascript">
-//         const pEl = document.getElementById("pEl")
-//         arr =['Michał', 'Monika', 'Jan', 'Kasia', 'Tomek', 'Ewelina', 'Kunegunda'];
 
-//         function getWomenNames (arrName)
-//         {
-//             const women =[];
-//             for (let i = 0; i < arrName.length; i++)
-//             {
-//                 const womenName = arrName[i];
-//                 console.log('iteracja po calej tablicy', womenName)
-//                 if(womenName[womenName.length -1] !=="a")
-//                 {
-//                     women.push(womenName)
-//                 }
-//             }
-//             return women
-//         }
-
-//         //console.log('tablica kobiet', getWomenNames(arr))
-//         pEl.textContent=getWomenNames(arr);
-
-//         console.log(parseFloat("12.454ewrerdfdg"));
-//         console.log(parseInt("12.454ewrerdfdg"));
-
-//         const template ="abc!!!!";
-//         console.log(`cos tam cos tam ${template}`)
-
-//         const buttonEl = document.getElementById("buttonEl");
-//         const inputEl = document.getElementById("inputEl");
-//         const pEl2 = document.getElementById("pEl2");
-//         const inputDvalue = document.getElementById("inputDvalue");
-
-
-//         buttonEl.addEventListener("click", getVALUE);
-
-//         function getVALUE(){
-//             let val = 90;
-//             pEl2.textContent = inputEl.value;
-//             pEl2.style.color = "#0074f6"
-//             pEl2.style.fontSize = "100px";
-//             console.log(val)
-//             domyslnaWartosc = inputEl.value;
-// inputDvalue.defaultValue = domyslnaWartosc;
-//         }
-
-//         let zmienna2 = false;
-//         let zmienna1 = true;
-
-//             if(  zmienna1 && zmienna2)
-//             {console.log("true")}
-//             else {console.log("false")}
-
-// let age = 10;
-// age > 18 ? console.log("jestes dorosly") : console.log("jestes dzieckiem")
-
-// const objekt = {
-//     imie: "jan",
-//     nazwisko: "koala",
-//     getFullName: function () {return objekt.imie;}
-// }
-
-// console.log( 'Test objektu', objekt.getFullName())
-
-
-// //
-
-// function getName(name, surname)
-// {
-//     return `${name} ${surname}`
-// }
-// console.log(getName('ABC', 'DEFGHI'))
-
-// //arrow =>
-
-// const getName2 = (name) =>
-// {
-//     return `${name} => test@@`;
-// }
-// console.log(getName2("Arrow"))
-
-// //zajecia 3 1:23:00
-
-// //
-
-
-// const polePow = (a, b, zmienna) =>
-
-// {
-//     const napis = "abc"
-//     return ((a * 0.5) * b) * zmienna + napis
-// }
-
-
-// let wynik = polePow(5, 0.30, 32)
-
-// console.log(wynik)
-
-// const sliderEl = document.getElementById("sliderEl");
-
-// sliderEl.addEventListener("pointerout", getColorValue);
-
-// function getColorValue()
-// {
-//     return inputDvalue.style.backgroundColor = sliderEl.value
-// }
-
-// let person1 = {
-//   name: "Michał",
-//   surname: "Gacek",
-//   age: 30,
-//   getFullName: function()
-//     {
-//       return `${this.name} ${this.surname} ${this.age}`
-//     }
-// }
-
-// console.log(`Przyklad this: `,person1.getFullName() )
 
 const api = 'c6b235d226dc4384bbb00338231910'
 const inputPogoda = document.getElementById("inputWheater");
