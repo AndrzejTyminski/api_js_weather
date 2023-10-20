@@ -1,0 +1,4 @@
+let NAZWA = (X, Y) => RETURN (x * y)
+
+function NAZWA (Z, X) 
+    {RETURN Z + Y}

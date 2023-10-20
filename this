@@ -1,0 +1,11 @@
+let person1 = {
+  name: "Michał",
+  surname: "Gacek",
+  age: 30,
+  getFullName: function() 
+    {
+      return `${this.name} ${this.surname} ${this.age}`
+    } 
+}
+
+console.log(person1.getFullName() )

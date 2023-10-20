@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="divEl">
+    <button id="1">1</button>
+    <button id="2">2</button>
+    <button id="3">3</button>
+    </div>
+
+    <p id="p"></p>
+</body>
+<script>
+    const btn1 = document.getElementById("1");
+    const btn2 = document.getElementById("2");
+    const btn3 = document.getElementById("3");
+    const pEl = document.getElementById("p")
+    const divEl = document.getElementById("divEl")
+
+
+        function Jedzonko (danie, cena)
+            {
+                this.danie = danie
+                this.cena = cena
+            }
+
+        const danie1 = new Jedzonko('gulasz', 20);
+        const danie2 = new Jedzonko('kapusniak', 30);
+        const danie3 = new Jedzonko('barszcz', 40);
+
+        Jedzonko.prototype.show = function()
+            {
+                return `Danie ${this.danie}, kosztuje ${this.cena} zł.`
+            }
+
+
+    //add event listener
+
+            divEl.addEventListener("click", selectButton);
+
+            function selectButton(event)
+            {
+                const jedzonkoButton = event.target.id;
+                pEl.innerText = `danie${jedzonkoButton}.danie`;
+                console.log(jedzonkoButton)
+            }
+
+
+        // btn1.addEventListener("click", () => pEl.innerHTML = danie1.show());
+        // btn2.addEventListener("click", () => pEl.innerHTML = danie2.show());
+        // btn3.addEventListener("click", () => pEl.innerHTML = danie3.show());
+
+        btn1.innerText = danie1.danie
+        btn2.innerText = danie2.danie
+        btn3.innerText = danie3.danie
+
+</script>
+</html>

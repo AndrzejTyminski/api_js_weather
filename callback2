@@ -1,0 +1,30 @@
+function logA(a, b, callback) {
+  setTimeout(() => {
+    console.log("a");
+    
+    const sum = a*b;    
+   
+      callback(sum);
+  }, 1000);
+}
+
+function logB(param) {
+  console.log("wynik dzialania funkcji b")
+  console.log(param)
+};
+
+logA(3,6,logB) 
+
+
+
+// const multiply = (a) => {return a*3}
+
+//  const arr = [1,3,5, 9].map(multiply)
+
+// console.log(arr)
+
+const multiply  = (elm) => elm *2;
+multiply (4)
+
+
+console.log(multiply)

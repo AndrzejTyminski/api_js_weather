@@ -1,0 +1,13 @@
+const testPromise = () => {
+  return new Promise((resolve, rejects) => {
+    //kod asynchroniczny
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
+};
+
+testPromise()
+.then(() => {console.log('message')})
+.catch(()=> {})
+
