@@ -13,12 +13,12 @@
 <label for="pogodaInput">Search city</label>
 <input name="pogodaInput" value="Zambrow" id="inputWheater"></input>
 <button id="pogodaBTN">wyszukaj</button>
-<div id="containerButtons">
-    <button id="Zambrow">Zambrów</button>
-    <button id="Lomza">Łomza</button>
-    <button id="Bialystok">Białystok</button>
-    <button id="Warsaw">Warszawa</button>
-</div >
+<ul id="containerButtons">
+    <li><button id="Zambrow">Zambrów</button></li>
+    <li><button id="Lomza">Łomza</button></li>
+    <li><button id="Bialystok">Białystok</button></li>
+    <li><button id="Warsaw">Warszawa</button></li>
+</ul >
 
 <pre id="data"></pre>
 <pre id="data2"></pre>
@@ -51,20 +51,9 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&la
 })}
 
 
-divButtons.addEventListener("click", selectCity);
+divButtons.addEventListener("click", () => {pogoda(event.target.id) });
+pogodaWyszukaj.addEventListener("click", () => {pogoda(inputPogoda.value)})
 
-function selectCity()
-{
-    pogoda(event.target.id)
-}
 
-pogodaWyszukaj.addEventListener("click", writeCity)
-
-function writeCity()
-{
-    pogoda(inputPogoda.value)
-}
-        
-        
         </script>
 </html>
