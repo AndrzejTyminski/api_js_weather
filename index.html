@@ -10,15 +10,15 @@
 <body>
 
 
-<label for="pogodaInput">wyszukaj</label>
+<label for="pogodaInput">Search city</label>
 <input name="pogodaInput" value="Zambrow" id="inputWheater"></input>
 <button id="pogodaBTN">wyszukaj</button>
-<div>
-    <button id="1">Zambrów</button>
-    <button id="2">Łomza</button>
-    <button id="3">Białystok</button>
-    <button id="4">Warszawa</button>
-</div>
+<div id="containerButtons">
+    <button id="Zambrow">Zambrów</button>
+    <button id="Lomza">Łomza</button>
+    <button id="Bialystok">Białystok</button>
+    <button id="Warsaw">Warszawa</button>
+</div >
 
 <pre id="data"></pre>
 <pre id="data2"></pre>
@@ -37,6 +37,7 @@ const dataEl = document.getElementById("data");
 const dataEl2 = document.getElementById("data2");
 const imageEl = document.getElementById("imageEl");
 const ulEl = document.getElementById("ulEl")
+const divButtons = document.getElementById("containerButtons")
 
 function pogoda(city) {
     dataEl.textContent = "";
@@ -44,21 +45,18 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&la
 .then((res) => res.json())
 .then((data) => {
     //dataEl.textContent = JSON.stringify(data, null, 1);
-    dataEl2.textContent = `Temperatura: ` + data.current.temp_c + ' stopnie C';
+    dataEl2.textContent = `Temperatura w : ` + city + ` ` + data.current.temp_c + ' stopnie C';
     imageEl.src = `http:` + data.current.condition.icon;
     if(data.error){dataEl.textContent = data.error.message};
-})
+})}
 
+divButtons.addEventListener("click", selectCity);
+
+function selectCity ()
+{
+    pogoda(event.target.id)
 }
 
-
-pogodaWyszukaj.addEventListener("click", () => {
-    pogoda(inputPogoda.value)})
-
-    const btn1 = document.getElementById("1").addEventListener("click", () => {pogoda('zambrow')})
-    const btn2 = document.getElementById("2").addEventListener("click", () => {pogoda('lomza')})
-    const btn3 = document.getElementById("3").addEventListener("click", () => {pogoda('bialystok')})
-    const btn4 = document.getElementById("4").addEventListener("click", () => {pogoda('warsaw')})
 
         </script>
 </html>
