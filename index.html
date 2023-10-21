@@ -39,7 +39,7 @@ const dataEl = document.getElementById("data");
 const dataEl2 = document.getElementById("data2");
 const dataEl3 = document.getElementById("data3")
 const imageEl = document.getElementById("imageEl");
-const ulEl = document.getElementById("ulEl")
+//const ulEl = document.getElementById("ulEl")
 const divButtons = document.getElementById("containerButtons")
 
 function pogoda(city) {
@@ -49,8 +49,8 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
     //dataEl.textContent = JSON.stringify(data, null, 1);
     dataEl2.textContent = `Temperatura w : ` + city + ` ` + data.current.temp_c + ' stopnie C ';
     dataEl3.textContent = `` ;
-    
-    const air = data.current.air_quality;    
+
+    const air = data.current.air_quality;
     let objectValue = ""
     for (const key in air) {
     objectValue +=  key +` `+ air[key] + `<br>`;}
