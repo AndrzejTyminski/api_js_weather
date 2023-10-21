@@ -53,9 +53,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
     const air = data.current.air_quality;    
     let objectValue = ""
     for (const key in air) {
-    console.log(`${key}: ${air[key]}`);
     objectValue +=  key +` `+ air[key] + `<br>`;}
-
     dataEl.innerHTML =  objectValue;
 
     imageEl.src = `http:` + data.current.condition.icon;
