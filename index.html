@@ -23,6 +23,7 @@
 
 <pre id="data"></pre>
 <pre id="data2"></pre>
+<pre id="data3"></pre>
 <img id="imageEl">
 
 
@@ -36,17 +37,27 @@ const inputPogoda = document.getElementById("inputWheater");
 const pogodaWyszukaj = document.getElementById("pogodaBTN")
 const dataEl = document.getElementById("data");
 const dataEl2 = document.getElementById("data2");
+const dataEl3 = document.getElementById("data3")
 const imageEl = document.getElementById("imageEl");
 const ulEl = document.getElementById("ulEl")
 const divButtons = document.getElementById("containerButtons")
 
 function pogoda(city) {
-    dataEl.textContent = "";
-fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&lang=pl`)
+fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&lang=pl`)
 .then((res) => res.json())
 .then((data) => {
     //dataEl.textContent = JSON.stringify(data, null, 1);
-    dataEl2.textContent = `Temperatura w : ` + city + ` ` + data.current.temp_c + ' stopnie C';
+    dataEl2.textContent = `Temperatura w : ` + city + ` ` + data.current.temp_c + ' stopnie C ';
+    dataEl3.textContent = `` ;
+    
+    const air = data.current.air_quality;    
+    let objectValue = ""
+    for (const key in air) {
+    console.log(`${key}: ${air[key]}`);
+    objectValue +=  key +` `+ air[key] + `<br>`;}
+
+    dataEl.innerHTML =  objectValue;
+
     imageEl.src = `http:` + data.current.condition.icon;
     if(data.error){dataEl.textContent = data.error.message};
 })}
@@ -54,6 +65,10 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&la
 
 divButtons.addEventListener("click", () => {pogoda(event.target.id) });
 pogodaWyszukaj.addEventListener("click", () => {pogoda(inputPogoda.value)})
+
+
+function jakosc()
+{}
 
 
         </script>
