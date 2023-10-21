@@ -50,13 +50,21 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&la
     if(data.error){dataEl.textContent = data.error.message};
 })}
 
+
 divButtons.addEventListener("click", selectCity);
 
-function selectCity ()
+function selectCity()
 {
     pogoda(event.target.id)
 }
 
+pogodaWyszukaj.addEventListener("click", writeCity)
 
+function writeCity()
+{
+    pogoda(inputPogoda.value)
+}
+        
+        
         </script>
 </html>
