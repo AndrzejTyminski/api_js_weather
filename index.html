@@ -14,6 +14,7 @@
 <input name="pogodaInput" value="Zambrow" id="inputWheater"></input>
 <button id="pogodaBTN">wyszukaj</button>
 <pre id="data"></pre>
+<img id="imageEl">
 
 </body>
 
@@ -24,15 +25,19 @@ const api = 'c6b235d226dc4384bbb00338231910'
 const inputPogoda = document.getElementById("inputWheater");
 const pogodaWyszukaj = document.getElementById("pogodaBTN")
 const dataEl = document.getElementById("data");
+const imageEl = document.getElementById("imageEl");
 
 function pogoda(city) {
-fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no`)
+    dataEl.textContent = "";
+fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no&lang=pl`)
 .then((res) => res.json())
 .then((data) => {
     dataEl.textContent = JSON.stringify(data, null, 2);
-    if(data.error){dataEl.innerHTML=data.error.message}
+    //imageEl.src = JSON.stringify(data.current.condition.icon);
+    console.log(imageEl.src)
+    if(data.error){dataEl.textContent = data.error.message}
 })
-.catch(error => console.log(`blad: ${error}`))
+//.catch(error => console.log(`blad: ${error}`))
 
 }
 
