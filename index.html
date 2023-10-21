@@ -26,7 +26,7 @@ const pogodaWyszukaj = document.getElementById("pogodaBTN")
 const dataEl = document.getElementById("data");
 
 function pogoda(city) {
-fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no`)
+fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=no`)
 .then((res) => res.json())
 .then((data) => {
     dataEl.textContent = JSON.stringify(data, null, 2);
