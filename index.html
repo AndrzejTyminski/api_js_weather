@@ -56,7 +56,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
     objectValue +=  key +` `+ air[key] + `<br>`;}
     dataEl.innerHTML =  objectValue;
 
-    imageEl.src = `http:` + data.current.condition.icon;
+    imageEl.src = `https:` + data.current.condition.icon;
     if(data.error){dataEl.textContent = data.error.message};
 })}
 
