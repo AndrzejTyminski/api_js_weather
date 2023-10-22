@@ -47,7 +47,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
 .then((data) => {
     //dataEl.textContent = JSON.stringify(data, null, 1);
     dataEl2.textContent = ``;
-    dataEl3.textContent = `TEMPERATURA ${data.current.temp_c} stopni C w ${city}` ;
+    dataEl3.textContent = `TEMPERATURA ${data.current.temp_c} C w ${city}` ;
 
     const air = data.current.air_quality;
     
