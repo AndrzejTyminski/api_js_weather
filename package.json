@@ -1,10 +1,10 @@
 {
-  "name": "goit-weather-app",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "npx parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
