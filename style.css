@@ -10,3 +10,8 @@ ul {list-style: none;}
 {
     color: red;
 }
+
+.tempValue
+{
+    font-size: x-large;
+}
