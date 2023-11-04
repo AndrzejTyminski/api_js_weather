@@ -37,7 +37,6 @@
 
     <script type="text/javascript">
 
-
 const api = 'c6b235d226dc4384bbb00338231910'
 const inputPogoda = document.getElementById("inputWheater");
 const pogodaWyszukaj = document.getElementById("pogodaBTN")
@@ -56,6 +55,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
     dataEl3.textContent = `TEMPERATURA ${data.current.temp_c} C w ${city}` ;
 
     const air = data.current.air_quality;
+    console.log(air)
 
     let objectValue = ""
     for (const key in air) {
@@ -69,8 +69,6 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}&aqi=yes&l
 
 divButtons.addEventListener("click", () => {pogoda(event.target.id) });
 pogodaWyszukaj.addEventListener("click", () => {pogoda(inputPogoda.value)})
-
-
 
         </script>
 </html>
