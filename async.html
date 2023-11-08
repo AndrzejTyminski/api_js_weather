@@ -38,13 +38,16 @@
 
 async function test(age)
 {
-    await registerData(age)
-    console.log('mozesz sie zarejestrowax')
-    await registerUser()
-    console.log('rejestracja adresu email')
-    await sendEmail()
-    console.log('wysylanie maila')
-
+    try{
+        await registerData(age)
+        console.log('mozesz sie zarejestrowax')
+        await registerUser()
+        console.log('rejestracja adresu email')
+        await sendEmail()
+        console.log('wysylanie maila')
+    }
+    catch(error)
+    {console.error(error)}
 }
 test(19)
 </script>
