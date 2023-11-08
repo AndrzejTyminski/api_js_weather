@@ -7,8 +7,12 @@
 </head>
 <body>
 
+    <p id="app"></p>
+
 </body>
 <script>
+    const pEl = document.getElementById("app");
+    let p = document.createElement("p");
 
     const registerData = (age) =>
             {
@@ -20,12 +24,12 @@
 
     const registerUser = () =>
             {
-                return new Promise((res,rej) => { setTimeout(() => {res('pozycja 2')}, 2000)})
+                return new Promise((res,rej) => { setTimeout(() => {res()}, 2000)})
             }
 
     const sendEmail = () =>
             {
-                return new Promise((res, rej) => {setTimeout(() => {res('send email')}, 1500)})
+                return new Promise((res, rej) => {setTimeout(() => {res()}, 1500)})
             }
 
 // registerData(18)
@@ -40,14 +44,17 @@ async function test(age)
 {
     try{
         await registerData(age)
-        console.log('mozesz sie zarejestrowax')
+        pEl.innerText="Mozesz sie zarejestrować"
         await registerUser()
-        console.log('rejestracja adresu email')
+        //pEl.appendChild(p.innerText="sdsd")
+        pEl.innerText="Rejestracja adresu email"
         await sendEmail()
-        console.log('wysylanie maila')
+        pEl.innerText='Wysylanie maila'
     }
     catch(error)
-    {console.error(error)}
+    {
+        pEl.innerText="masz za malo lat"
+        console.error(error)}
 }
 test(19)
 </script>
