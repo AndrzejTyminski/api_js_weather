@@ -20,23 +20,32 @@
 
     const registerUser = () =>
             {
-                return new Promise((res,rej) => { setTimeout(() => {res('pozycja 2')}, 1000)})
+                return new Promise((res,rej) => { setTimeout(() => {res('pozycja 2')}, 2000)})
             }
 
     const sendEmail = () =>
             {
-                return new Promise((res, rej) => {setTimeout(() => {res('send email')}, 500)})
+                return new Promise((res, rej) => {setTimeout(() => {res('send email')}, 1500)})
             }
 
-registerData(19)
-.then(res => {console.log(res)
-    return registerUser()})
-.then(res => {console.log(res)
-    return sendEmail()})
-.then(res => console.log(res))
-.catch(error => console.error(error))
+// registerData(18)
+// .then(res => {console.log(res)
+//     return registerUser()})
+// .then(res => {console.log(res)
+//     return sendEmail()})
+// .then(res => console.log(res))
+// .catch(error => console.error(error))
 
+async function test(age)
+{
+    await registerData(age)
+    console.log('mozesz sie zarejestrowax')
+    await registerUser()
+    console.log('rejestracja adresu email')
+    await sendEmail()
+    console.log('wysylanie maila')
 
-
+}
+test(19)
 </script>
 </html>
