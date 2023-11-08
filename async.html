@@ -46,7 +46,6 @@ async function test(age)
         await registerData(age)
         pEl.innerText="Mozesz sie zarejestrować"
         await registerUser()
-        //pEl.appendChild(p.innerText="sdsd")
         pEl.innerText="Rejestracja adresu email"
         await sendEmail()
         pEl.innerText='Wysylanie maila'
@@ -56,6 +55,6 @@ async function test(age)
         pEl.innerHTML="Masz za malo lat"
         console.error(error)}
 }
-test(1)
+test(19)
 </script>
 </html>
