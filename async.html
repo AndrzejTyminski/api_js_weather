@@ -6,9 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-
     <p id="app"></p>
-
 </body>
 <script>
     const pEl = document.getElementById("app");
@@ -42,7 +40,8 @@
 
 async function test(age)
 {
-    try{
+    try
+    {
         await registerData(age)
         pEl.innerText="Mozesz sie zarejestrować"
         await registerUser()
@@ -53,7 +52,8 @@ async function test(age)
     catch(error)
     {
         pEl.innerHTML="Masz za malo lat"
-        console.error(error)}
+        console.error(error)
+    }
 }
 test(19)
 </script>
