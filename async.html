@@ -7,14 +7,20 @@
 </head>
 <body>
     <p id="app"></p>
+    <button id="btn">Zmien obraz</button><br>
+    <pre id="pre"></pre>
+    <img id="img" style="width: 400px;">
+
 </body>
 <script>
     const pEl = document.getElementById("app");
-    let p = document.createElement("p");
+    const imgEl = document.getElementById("img");
+    const preEl = document.getElementById("pre");
+    const btnEl = document.getElementById("btn");
 
     const registerData = (age) =>
             {
-                return new Promise((res, rej) => {
+                    return new Promise((res, rej) => {
                     if(age >= 18)
                     {res('wiek jest ok')}
                     else {rej('masz za malo lat')}})
@@ -56,5 +62,18 @@ async function test(age)
     }
 }
 test(19)
+
+ function image (){
+    const url='https://dog.ceo/api/breeds/image/random'
+fetch(url)
+    .then(response => response.json())
+    .then(data => {imgEl.setAttribute('src', data.message);
+                preEl.innerText=`${data.message} ${data.status}`})
+    .catch(error => console.erorr(error))
+}
+
+btnEl.addEventListener("click",image)
+
+
 </script>
 </html>
